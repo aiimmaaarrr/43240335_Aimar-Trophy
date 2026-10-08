@@ -41,6 +41,8 @@ Definisi variabel CSS kustom yang merepresentasikan identitas visual portofolio:
   --shadow-glow: 0 0 20px rgba(6, 210, 168, 0.15);
 }
 
+---
+
 ## 3. Struktur Navigasi (Navbar)
 Navbar melayang (*Fixed/Sticky*) dengan efek *glassmorphism* dan menu adaptif:
 1. Home (`#home`)
