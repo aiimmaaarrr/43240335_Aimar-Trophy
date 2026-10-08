@@ -43,6 +43,7 @@ Definisi variabel CSS kustom yang merepresentasikan identitas visual portofolio:
 
 ---
 
+```
 ## 3. Struktur Navigasi (Navbar)
 Navbar melayang (*Fixed/Sticky*) dengan efek *glassmorphism* dan menu adaptif:
 1. Home (`#home`)
