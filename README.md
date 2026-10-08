@@ -13,7 +13,7 @@ Repositori ini berisi kode sumber, dokumentasi perancangan, serta laporan proyek
 ---
 
 ## 🔗 Tautan Proyek & Pratinjau
-* **Live Preview (Vercel)**: [Akses Website Portofolio](https://portfolio-aimar2026-source-code.vercel.app/) *(sesuaikan jika ada link spesifik)*
+* **Live Preview (Vercel)**: [Akses Website Portofolio](https://aimartrophysudrajat-portfolio.vercel.app/) *
 * **Repositori GitHub**: [GitHub Repository](https://github.com/aiimmaaarrr/43240335_Aimar-Trophy)
 
 ---
