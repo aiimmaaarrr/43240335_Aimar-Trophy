@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aimar Trophy Sudrajat — Data Analyst & Systems Student Portfolio</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            doodle: ['"Caveat"', 'cursive'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            paper: '#F6F5F0',
+            paperLine: '#E2E0D8',
+            charcoal: '#121212',
+            electricYellow: '#FFDD55',
+            dataTeal: '#00D2A0',
+            royalBlue: '#2563EB',
+            coralPink: '#FF6B6B',
+            darkSlate: '#0F172A',
+            darkGrid: '#1E293B',
+            darkCard: '#1E293B',
+          },
+          boxShadow: {
+            'brutal': '4px 4px 0px #121212',
+            'brutal-lg': '6px 6px 0px #121212',
+            'brutal-sm': '2px 2px 0px #121212',
+            'brutal-dark': '4px 4px 0px #38BDF8',
+            'brutal-dark-lg': '6px 6px 0px #38BDF8',
+          },
+          keyframes: {
+            slideUpFade: {
+              '0%': { opacity: '0', transform: 'translateY(25px) scale(0.95)' },
+              '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+            }
+          },
+          animation: {
+            'slideUpFade': 'slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS Styles -->
+  <style>
+    /* Lined Paper Canvas Pattern */
+    .bg-notebook-pattern {
+      background-color: #F6F5F0;
+      background-image: linear-gradient(#E2E0D8 1px, transparent 1px);
+      background-size: 100% 28px;
+    }
+    .dark .bg-notebook-pattern {
+      background-color: #0F172A;
+      background-image: 
+        linear-gradient(to right, #1E293B 1px, transparent 1px),
+        linear-gradient(to bottom, #1E293B 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    /* Tape Sticker Effect */
+    .tape-strip {
+      background: rgba(255, 237, 160, 0.75);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+      border-left: 2px dashed rgba(0,0,0,0.2);
+      border-right: 2px dashed rgba(0,0,0,0.2);
+    }
+    .dark .tape-strip {
+      background: rgba(56, 189, 248, 0.4);
+      border-left: 2px dashed rgba(255,255,255,0.3);
+      border-right: 2px dashed rgba(255,255,255,0.3);
+    }
+
+    /* Polaroid subtle tilt */
+    .polaroid-frame {
+      background: #FFFFFF;
+      border: 2px solid #121212;
+      box-shadow: 5px 6px 0px #121212;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .dark .polaroid-frame {
+      background: #1E293B;
+      border: 2px solid #38BDF8;
+      box-shadow: 5px 6px 0px #38BDF8;
+    }
+    .polaroid-frame:hover {
+      transform: translateY(-4px) rotate(1deg);
+    }
+
+    /* Tactile button push */
+    .btn-tactile {
+      transition: all 0.15s ease-in-out;
+    }
+    .btn-tactile:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #121212;
+    }
+    .dark .btn-tactile:hover {
+      box-shadow: 6px 6px 0px #38BDF8;
+    }
+    .btn-tactile:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px #121212;
+    }
+    .dark .btn-tactile:active {
+      box-shadow: 1px 1px 0px #38BDF8;
+    }
+  </style>
+</head>
+<body class="bg-notebook-pattern text-charcoal dark:text-slate-100 transition-colors duration-300 min-h-screen selection:bg-electricYellow selection:text-charcoal font-sans antialiased">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="sticky top-4 z-50 px-4 md:px-8 max-w-6xl mx-auto">
+    <nav class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-2 border-charcoal dark:border-cyan-400 rounded-2xl p-3 px-5 shadow-brutal dark:shadow-brutal-dark flex items-center justify-between transition-all">
+      
+      <!-- Brand Logo / Monogram -->
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="bg-coralPink text-white font-mono font-bold text-base px-2.5 py-1 rounded border-2 border-charcoal dark:border-white shadow-brutal-sm rotate-[-2deg] group-hover:rotate-0 transition-transform">
+          AT.
+        </div>
+        <div class="flex flex-col">
+          <span class="font-extrabold text-sm md:text-base tracking-tight leading-none text-charcoal dark:text-white">
+            aimartrophy<span class="text-royalBlue dark:text-cyan-400">.data</span>
+          </span>
+          <span class="font-doodle text-xs text-stone-600 dark:text-cyan-200" data-i18n="logo-sub">data operations & bi</span>
+        </div>
+      </a>
+
+      <!-- Floating Nav Links -->
+      <div class="hidden md:flex items-center gap-1 bg-stone-100 dark:bg-slate-800 p-1 rounded-xl border border-charcoal/20 dark:border-slate-700 font-mono text-xs">
+        <a href="#about" class="px-3 py-1.5 rounded-lg hover:bg-white dark:hover:bg-slate-700 transition font-medium text-stone-700 dark:text-slate-200 hover:text-charcoal" data-i18n="nav-about">/about</a>
+        <a href="#experience" class="px-3 py-1.5 rounded-lg hover:bg-white dark:hover:bg-slate-700 transition font-medium text-stone-700 dark:text-slate-200 hover:text-charcoal" data-i18n="nav-exp">/experience</a>
+        <a href="#skills" class="px-3 py-1.5 rounded-lg hover:bg-white dark:hover:bg-slate-700 transition font-medium text-stone-700 dark:text-slate-200 hover:text-charcoal" data-i18n="nav-skills">/skills</a>
+        <a href="#projects" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 shadow-sm font-bold text-royalBlue dark:text-cyan-400" data-i18n="nav-projects">/projects ★</a>
+        <a href="#contact" class="px-3 py-1.5 rounded-lg hover:bg-white dark:hover:bg-slate-700 transition font-medium text-stone-700 dark:text-slate-200 hover:text-charcoal" data-i18n="nav-contact">/contact</a>
+      </div>
+
+      <!-- Action Items & Controls -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Language Toggle -->
+        <button id="langToggle" class="relative px-2 py-1 bg-stone-100 dark:bg-slate-800 border-2 border-charcoal dark:border-cyan-400 rounded-xl shadow-brutal-sm hover:scale-105 active:scale-95 transition-all font-mono text-xs font-bold text-charcoal dark:text-white" aria-label="Toggle Language">
+          <span id="langText">EN</span>
+        </button>
+
+        <!-- Theme Toggle Switch -->
+        <button id="themeToggle" class="relative p-2 bg-stone-100 dark:bg-slate-800 border-2 border-charcoal dark:border-cyan-400 rounded-xl shadow-brutal-sm hover:scale-105 active:scale-95 transition-all" aria-label="Toggle Theme">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="hidden dark:block w-4 h-4 text-electricYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="block dark:hidden w-4 h-4 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <!-- Tape Sticker "Contact Me" CTA -->
+        <a href="#contact" class="relative group">
+          <div class="absolute -top-2 left-3 right-3 h-3 tape-strip transform -rotate-1 pointer-events-none z-10 opacity-80"></div>
+          <div class="btn-tactile bg-electricYellow dark:bg-cyan-400 text-charcoal font-bold text-xs md:text-sm px-3.5 md:px-4 py-2 rounded-xl border-2 border-charcoal shadow-brutal-sm flex items-center gap-1.5">
+            <span data-i18n="contact-btn">Contact Me</span>
+            <span class="inline-block transform group-hover:translate-x-0.5 transition">→</span>
+          </div>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="max-w-6xl mx-auto px-4 md:px-8 pt-8 md:pt-14 pb-24 space-y-24">
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative pt-4 md:pt-8">
+      
+      <!-- Top Sticker Tag -->
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <div class="inline-flex items-center gap-2 bg-dataTeal/20 dark:bg-dataTeal/30 border-2 border-dataTeal px-3 py-1.5 rounded-full font-mono text-xs font-bold text-emerald-900 dark:text-emerald-300">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-dataTeal opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-dataTeal"></span>
+          </span>
+          <span data-i18n="hero-tag">OPEN TO DATA OPERATIONS & BI ROLES</span>
+        </div>
+        <div class="font-doodle text-xl text-stone-600 dark:text-stone-400 hidden sm:inline-block rotate-[-3deg]" data-i18n="hero-tag-sub">
+          (ready for fulltime / contract) ✍️
+        </div>
+      </div>
+
+      <!-- Hero Grid Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: Headline & Bio Content -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="relative">
+            <!-- Doodle "my name is" label -->
+            <div class="inline-block relative">
+              <span class="font-doodle text-2xl md:text-3xl text-royalBlue dark:text-cyan-300 tracking-wide font-bold" data-i18n="hero-myname">
+                my name is
+              </span>
+              <svg class="absolute -right-7 top-1 w-6 h-6 text-royalBlue dark:text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              </svg>
+            </div>
+
+            <!-- Massive Main Headline with Animation -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-charcoal dark:text-white mt-1">
+              Aimar Trophy <br>
+              <span class="relative inline-block mt-1 animate-slideUpFade opacity-0" style="animation-delay: 0.2s;">
+                <span class="relative z-10 px-2 py-0.5 bg-electricYellow dark:bg-transparent dark:text-cyan-300 border-2 border-charcoal dark:border-cyan-400 rounded-lg shadow-brutal-sm">
+                  Sudrajat
+                </span>
+              </span>
+            </h1>
+          </div>
+
+          <!-- Role & University Badge -->
+          <div class="flex flex-wrap items-center gap-2 pt-1 font-mono text-sm md:text-base">
+            <span class="bg-white dark:bg-slate-800 text-charcoal dark:text-slate-200 border-2 border-charcoal dark:border-slate-700 px-3 py-1 rounded-lg font-bold shadow-brutal-sm" data-i18n="hero-badge1">
+              Data Analyst
+            </span>
+            <span class="text-stone-400 dark:text-slate-600 font-bold">&amp;</span>
+            <span class="bg-stone-100 dark:bg-slate-800 text-stone-700 dark:text-slate-300 border-2 border-charcoal dark:border-slate-700 px-3 py-1 rounded-lg" data-i18n="hero-badge2">
+              Information Systems Student
+            </span>
+            <span class="bg-royalBlue/10 dark:bg-cyan-950/60 text-royalBlue dark:text-cyan-300 font-bold border border-royalBlue/30 dark:border-cyan-500/40 px-2.5 py-1 rounded-lg text-xs">
+              @ STMIK IKMI Cirebon
+            </span>
+          </div>
+
+          <!-- Value Proposition Pitch -->
+          <p class="text-base sm:text-lg text-stone-700 dark:text-slate-300 leading-relaxed max-w-xl" data-i18n="hero-bio">
+            I turn complex, messy datasets into <strong>actionable business intelligence</strong> and clear visual stories. Grounded in high-accuracy corporate operational experience, I build robust Tableau dashboards and automated ETL pipelines.
+          </p>
+
+          <!-- Dual CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#projects" class="btn-tactile bg-royalBlue text-white font-bold px-6 py-3.5 rounded-xl border-2 border-charcoal dark:border-white shadow-brutal flex items-center gap-2 group">
+              <span data-i18n="hero-btn1">★ Explore Featured Projects</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+            
+            <a href="#contact" class="btn-tactile bg-electricYellow dark:bg-slate-800 text-charcoal dark:text-yellow-300 font-bold px-6 py-3.5 rounded-xl border-2 border-charcoal dark:border-yellow-400 shadow-brutal flex items-center gap-2">
+              <span data-i18n="hero-btn2">Get in Touch</span>
+              <span>💬</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics Ribbon -->
+          <div class="grid grid-cols-3 gap-3 pt-4 max-w-md font-mono">
+            <div class="bg-white dark:bg-slate-800/80 p-3 rounded-xl border-2 border-charcoal dark:border-slate-700 shadow-brutal-sm text-center">
+              <div class="text-2xl font-black text-royalBlue dark:text-cyan-400">3rd</div>
+              <div class="text-[10px] text-stone-500 dark:text-slate-400 font-bold uppercase mt-0.5" data-i18n="stat1-title">National Data Viz</div>
+            </div>
+            <div class="bg-white dark:bg-slate-800/80 p-3 rounded-xl border-2 border-charcoal dark:border-slate-700 shadow-brutal-sm text-center">
+              <div class="text-2xl font-black text-emerald-600 dark:text-emerald-400">100%</div>
+              <div class="text-[10px] text-stone-500 dark:text-slate-400 font-bold uppercase mt-0.5" data-i18n="stat2-title">Cash Recon Audit</div>
+            </div>
+            <div class="bg-white dark:bg-slate-800/80 p-3 rounded-xl border-2 border-charcoal dark:border-slate-700 shadow-brutal-sm text-center">
+              <div class="text-2xl font-black text-coralPink">5th</div>
+              <div class="text-[10px] text-stone-500 dark:text-slate-400 font-bold uppercase mt-0.5" data-i18n="stat3-title">Semester Scholar</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Polaroid Avatar Photo with Hand-drawn Stickers -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+          
+          <div class="relative w-full max-w-sm">
+            
+            <!-- Tape Strip on Polaroid Top -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-6 tape-strip rotate-[1deg] z-20"></div>
+            
+            <!-- Sticky Note Annotation (Top-Left) -->
+            <div class="absolute -top-6 -left-6 z-20 bg-electricYellow text-charcoal border-2 border-charcoal p-2 rounded-lg shadow-brutal-sm rotate-[-8deg] hidden sm:block">
+              <p class="font-doodle text-base font-bold leading-tight" data-i18n="polaroid-note1">3rd Winner National<br>Data Viz 🏆</p>
+            </div>
+
+            <!-- Polaroid Photo Frame -->
+            <div class="polaroid-frame p-4 pb-6 rounded-2xl rotate-[-1deg]">
+              <div class="overflow-hidden rounded-xl border border-charcoal/40 aspect-[4/5] relative bg-stone-100">
+                <img src="assets/FPIC2.jpeg" alt="Aimar Trophy Sudrajat - Portrait" class="w-full h-full object-cover object-center" />
+                <div class="absolute bottom-2 right-2 bg-charcoal/80 text-white font-mono text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">
+                  STAGE_LIVE.RAW
+                </div>
+              </div>
+              <div class="mt-4 flex items-center justify-between px-1">
+                <div>
+                  <h3 class="font-bold text-sm text-charcoal dark:text-white">Aimar Trophy Sudrajat</h3>
+                  <p class="font-mono text-xs text-stone-500 dark:text-slate-400">Cirebon, West Java, ID 🇮🇩</p>
+                </div>
+                <span class="font-doodle text-xl text-royalBlue dark:text-cyan-400 font-bold rotate-[-3deg]" data-i18n="polaroid-tag">"ready to build!"</span>
+              </div>
+            </div>
+
+            <!-- Sticky Note Annotation (Bottom-Right) -->
+            <div class="absolute -bottom-6 -right-4 z-20 bg-coralPink text-white border-2 border-charcoal p-2.5 rounded-lg shadow-brutal-sm rotate-[5deg]">
+              <p class="font-doodle text-base font-bold leading-tight" data-i18n="polaroid-note2">Office-Ready<br>Work Ethic! 💼</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 2. ABOUT & WORK EXPERIENCE (DUAL-NARRATIVE BENTO GRID) -->
+    <section id="about" class="space-y-6">
+      
+      <!-- Section Header -->
+      <div class="flex items-end justify-between border-b-2 border-charcoal dark:border-slate-700 pb-3">
+        <div>
+          <div class="inline-block bg-charcoal dark:bg-cyan-400 text-white dark:text-charcoal font-mono text-xs font-bold px-2 py-0.5 rounded mb-1" data-i18n="sec1-tag">
+            01 // BACKGROUND & TIMELINE
+          </div>
+          <h2 class="text-3xl font-extrabold tracking-tight text-charcoal dark:text-white flex items-center gap-3" data-i18n="sec1-title">
+            Academic Rigor & Real Corporate Roots
+          </h2>
+        </div>
+        <span class="font-doodle text-2xl text-stone-500 dark:text-cyan-300 hidden md:inline-block rotate-[-2deg]" data-i18n="sec1-doodle">
+          disciplined & high accuracy! 📈
+        </span>
+      </div>
+
+      <!-- Bento Grid (Dual Narrative) -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Card 1: Academic Background (5 cols) -->
+        <div class="md:col-span-5 bg-white dark:bg-slate-800 rounded-2xl border-2 border-charcoal dark:border-slate-700 p-6 shadow-brutal dark:shadow-brutal-dark flex flex-col justify-between relative overflow-hidden">
+          <!-- Folder Tab Mockup Top -->
+          <div class="absolute top-0 right-0 bg-stone-200 dark:bg-slate-700 border-l-2 border-b-2 border-charcoal dark:border-slate-600 px-3 py-1 font-mono text-[11px] font-bold text-stone-700 dark:text-slate-300 rounded-bl-xl">
+            FILE_NO: ACAD-2024
+          </div>
+
+          <div class="space-y-4 pt-2">
+            <div class="w-10 h-10 rounded-xl bg-royalBlue/10 dark:bg-cyan-950 border-2 border-royalBlue dark:border-cyan-400 flex items-center justify-center text-royalBlue dark:text-cyan-400 font-bold text-lg">
+              🎓
+            </div>
+            
+            <div>
+              <span class="font-mono text-xs font-bold text-royalBlue dark:text-cyan-400 uppercase tracking-wider" data-i18n="sec1-ed-title">Formal Education</span>
+              <h3 class="text-xl font-bold text-charcoal dark:text-white mt-0.5">STMIK IKMI Cirebon</h3>
+              <p class="text-sm font-semibold text-stone-600 dark:text-slate-300" data-i18n="sec1-ed-sub">Undergraduate, Information Systems (S1)</p>
+              <div class="inline-block mt-2 font-mono text-xs bg-stone-100 dark:bg-slate-700 px-2.5 py-1 rounded border border-charcoal/20 dark:border-slate-600 text-stone-700 dark:text-slate-200 font-medium" data-i18n="sec1-ed-status">
+                Current Status: 5th Semester • GPA 3.4
+              </div>
+            </div>
+
+            <p class="text-stone-600 dark:text-slate-300 text-sm leading-relaxed" data-i18n="sec1-ed-desc">
+              Focusing on business intelligence pipelines, relational databases, data warehousing, and applied machine learning. Combines academic coursework with the National Data Visualization Competition (INSPIRE BIGBANG) by Universitas Bunda Mulia and independent case studies.
+            </p>
+
+            <div class="space-y-2 pt-2">
+              <span class="font-mono text-xs text-stone-500 dark:text-slate-400 font-bold">Key Coursework Modules:</span>
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                <span class="bg-stone-100 dark:bg-slate-700 px-2 py-0.5 rounded border border-stone-300 dark:border-slate-600 text-stone-800 dark:text-slate-200">Database Systems (MySQL)</span>
+                <span class="bg-stone-100 dark:bg-slate-700 px-2 py-0.5 rounded border border-stone-300 dark:border-slate-600 text-stone-800 dark:text-slate-200">Data Mining & BI</span>
+                <span class="bg-stone-100 dark:bg-slate-700 px-2 py-0.5 rounded border border-stone-300 dark:border-slate-600 text-stone-800 dark:text-slate-200">Algorithms & Python</span>
+                <span class="bg-stone-100 dark:bg-slate-700 px-2 py-0.5 rounded border border-stone-300 dark:border-slate-600 text-stone-800 dark:text-slate-200">Enterprise Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-stone-200 dark:border-slate-700 font-doodle text-lg text-emerald-600 dark:text-emerald-400" data-i18n="sec1-ed-quote">
+            "Bridging technical systems logic with clear business decisions."
+          </div>
+        </div>
+
+        <!-- Card 2: Pre-College Operational Timeline (7 cols) -->
+        <div id="experience" class="md:col-span-7 bg-white dark:bg-slate-800 rounded-2xl border-2 border-charcoal dark:border-slate-700 p-6 shadow-brutal dark:shadow-brutal-dark space-y-5 relative">
+          
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">🗂️</span>
+              <div>
+                <h3 class="text-xl font-bold text-charcoal dark:text-white" data-i18n="sec1-exp-title">Professional Experience</h3>
+                <p class="font-mono text-xs text-stone-500 dark:text-slate-400" data-i18n="sec1-exp-sub">Corporate & Operational Roles (Pre-College Foundation)</p>
+              </div>
+            </div>
+            <span class="bg-electricYellow text-charcoal font-mono text-[11px] font-bold px-2 py-0.5 rounded border border-charcoal shadow-brutal-sm" data-i18n="sec1-exp-badge">
+              2+ YRS EXP
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-stone-600 dark:text-slate-300 leading-normal" data-i18n="sec1-exp-desc">
+            Prior to college, I spent several years working in fast-paced corporate and financial logistics settings. This built my high stamina, zero-error tolerance, and real understanding of data integrity.
+          </p>
+
+          <!-- Timeline Items -->
+          <div class="space-y-4 pt-1">
+            
+            <!-- Experience Item 1 -->
+            <div class="relative pl-6 border-l-2 border-charcoal dark:border-cyan-400 space-y-1 group">
+              <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-coralPink border-2 border-charcoal dark:border-white"></div>
+              <div class="flex flex-wrap items-center justify-between gap-1">
+                <h4 class="font-bold text-sm sm:text-base text-charcoal dark:text-white">
+                  PT Prosegur Cash Indonesia
+                </h4>
+                <span class="font-mono text-xs bg-stone-100 dark:bg-slate-700 text-stone-600 dark:text-slate-300 px-2 py-0.5 rounded border border-stone-300 dark:border-slate-600" data-i18n="sec1-job1-role">
+                  Cash Processing Center Cashier
+                </span>
+              </div>
+              <p class="text-xs text-stone-600 dark:text-slate-300 leading-relaxed" data-i18n="sec1-job1">
+                Handled high-volume financial physical reconciliations and multi-billion rupiah vault balance auditing daily. Maintained a <strong>99.98%+ accuracy record</strong> under strict compliance and time-sensitive SLAs.
+              </p>
+            </div>
+
+            <!-- Experience Item 2 -->
+            <div class="relative pl-6 border-l-2 border-charcoal dark:border-cyan-400 space-y-1 group">
+              <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-electricYellow border-2 border-charcoal dark:border-white"></div>
+              <div class="flex flex-wrap items-center justify-between gap-1">
+                <h4 class="font-bold text-sm sm:text-base text-charcoal dark:text-white">
+                  PT Tera Data Indonusa (Axioo)
+                </h4>
+                <span class="font-mono text-xs bg-stone-100 dark:bg-slate-700 text-stone-600 dark:text-slate-300 px-2 py-0.5 rounded border border-stone-300 dark:border-slate-600" data-i18n="sec1-job2-role">
+                  Hardware Production Intern
+                </span>
+              </div>
+              <p class="text-xs text-stone-600 dark:text-slate-300 leading-relaxed" data-i18n="sec1-job2">
+                Interned on the hardware production line (laptops), responsible for BIOS setup and rotated across various assembly line stations to comprehensively understand the entire production cycle.
+              </p>
+            </div>
+
+            <!-- Experience Item 3 -->
+            <div class="relative pl-6 border-l-2 border-charcoal dark:border-cyan-400 space-y-1 group">
+              <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-dataTeal border-2 border-charcoal dark:border-white"></div>
+              <div class="flex flex-wrap items-center justify-between gap-1">
+                <h4 class="font-bold text-sm sm:text-base text-charcoal dark:text-white">
+                  PT Indo Sultan Jaya
+                </h4>
+                <span class="font-mono text-xs bg-stone-100 dark:bg-slate-700 text-stone-600 dark:text-slate-300 px-2 py-0.5 rounded border border-stone-300 dark:border-slate-600" data-i18n="sec1-job3-role">
+                  Refinery Operator
+                </span>
+              </div>
+              <p class="text-xs text-stone-600 dark:text-slate-300 leading-relaxed" data-i18n="sec1-job3">
+                Served as a Refinery Operator during the plant's early construction phase. Acted as a helper involved in the initial setup, gaining deep foundational knowledge of source pipelines, pressure systems, and valve placements across the oil refinery.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Highlight Note -->
+          <div class="bg-stone-50 dark:bg-slate-900/60 p-3 rounded-xl border border-charcoal/20 dark:border-slate-700 flex items-center gap-2">
+            <span class="text-base">💡</span>
+            <p class="font-doodle text-base text-stone-700 dark:text-cyan-200" data-i18n="sec1-exp-quote">
+              "Recruiters love that I don't just know code — I already know how corporate systems and teams actually run!"
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 3. TECH STACK & SKILLS MATRIX -->
+    <section id="skills" class="space-y-6">
+      
+      <!-- Section Header -->
+      <div class="flex items-end justify-between border-b-2 border-charcoal dark:border-slate-700 pb-3">
+        <div>
+          <div class="inline-block bg-charcoal dark:bg-cyan-400 text-white dark:text-charcoal font-mono text-xs font-bold px-2 py-0.5 rounded mb-1">
+            02 // TOOLKIT & COMPETENCIES
+          </div>
+          <h2 class="text-3xl font-extrabold tracking-tight text-charcoal dark:text-white" data-i18n="sec2-title">
+            Data Stack & Technical Matrix
+          </h2>
+        </div>
+        <span class="font-mono text-xs text-stone-500 dark:text-slate-400 hidden sm:inline-block">
+          [hover badges for micro-tilt]
+        </span>
+      </div>
+
+      <!-- Skills Matrix Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Column 1: Core Analytics & BI -->
+        <div class="bg-white dark:bg-slate-800 rounded-2xl border-2 border-charcoal dark:border-slate-700 p-6 shadow-brutal dark:shadow-brutal-dark space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-stone-200 dark:border-slate-700">
+            <h3 class="font-extrabold text-charcoal dark:text-white flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-royalBlue"></span>
+              Analytics & BI
+            </h3>
+            <span class="font-mono text-[11px] text-stone-400 dark:text-slate-400">01 / PRIMARY</span>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5">
+            <!-- Badges... (kept as is) -->
+            <div class="group bg-blue-50 dark:bg-slate-700/60 hover:bg-royalBlue hover:text-white border-2 border-charcoal dark:border-slate-600 hover:border-charcoal p-2 rounded-xl transition-all duration-200 cursor-default flex items-center gap-2 shadow-brutal-sm hover:-translate-y-1">
+              <span class="text-base">📊</span>
+              <div>
+                <div class="font-bold text-xs">Tableau Public</div>
+                <div class="font-mono text-[10px] text-stone-500 group-hover:text-blue-100 dark:text-slate-400">Dashboards, Storytelling</div>
+              </div>
+            </div>
+            <div class="group bg-yellow-50 dark:bg-slate-700/60 hover:bg-yellow-400 hover:text-charcoal border-2 border-charcoal dark:border-slate-600 hover:border-charcoal p-2 rounded-xl transition-all duration-200 cursor-default flex items-center gap-2 shadow-brutal-sm hover:-translate-y-1">
+              <span class="text-base">🐍</span>
+              <div>
+                <div class="font-bold text-xs">Python</div>
+                <div class="font-mono text-[10px] text-stone-500 group-hover:text-stone-800 dark:text-slate-400">Pandas, NumPy, Seaborn</div>
+              </div>
+            </div>
+            <div class="group bg-emerald-50 dark:bg-slate-700/60 hover:bg-dataTeal hover:text-charcoal border-2 border-charcoal dark:border-slate-600 hover:border-charcoal p-2 rounded-xl transition-all duration-200 cursor-default flex items-center gap-2 shadow-brutal-sm hover:-translate-y-1">
+              <span class="text-base">🗄️</span>
+              <div>
+                <div class="font-bold text-xs">SQL & Databases</div>
+                <div class="font-mono text-[10px] text-stone-500 group-hover:text-stone-800 dark:text-slate-400">MySQL, PostgreSQL, Joins</div>
+              </div>
+            </div>
+            <div class="group bg-green-50 dark:bg-slate-700/60 hover:bg-emerald-500 hover:text-white border-2 border-charcoal dark:border-slate-600 hover:border-charcoal p-2 rounded-xl transition-all duration-200 cursor-default flex items-center gap-2 shadow-brutal-sm hover:-translate-y-1">
+              <span class="text-base">📑</span>
+              <div>
+                <div class="font-bold text-xs">Advanced Excel</div>
+                <div class="font-mono text-[10px] text-stone-500 group-hover:text-emerald-100 dark:text-slate-400">PowerQuery, Pivot, XLOOKUP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Data Science & Engineering -->
+        <div class="bg-white dark:bg-slate-800 rounded-2xl border-2 border-charcoal dark:border-slate-700 p-6 shadow-brutal dark:shadow-brutal-dark space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-stone-200 dark:border-slate-700">
+            <h3 class="font-extrabold text-charcoal dark:text-white flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-electricYellow"></span>
+              Data Science & Modeling
+            </h3>
+            <span class="font-mono text-[11px] text-stone-400 dark:text-slate-400">02 / ADVANCED</span>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5">
+            <div class="group bg-orange-50 dark:bg-slate-700/60 hover:bg-orange-400 hover:text-charcoal border-2 border-charcoal dark:border-slate-600 hover:border-charcoal p-2 rounded-xl transition-all duration-200 cursor-default flex items-center gap-2 shadow-brutal-sm hover:-translate-y-1">
+              <span class="text-base">⚡</span>
+              <div>
+                <div class="font-bold text-xs">RapidMiner</div>
+                <div class="font-mono text-[10px] text-stone-500 group-hover:text-stone-800 dark:text-slate-400">Clustering, Predictive ML</div>
+              </div>
+            </div>
+            <div class="group bg-purple-50 dark:bg-slate-700/60 hover:bg-purple-500 hover:text-white border-2 border-charcoal dark:border-slate-600 hover:border-charcoal p-2 rounded-xl transition-all duration-200 cursor-default flex items-center gap-2 shadow-brutal-sm hover:-translate-y-1">
+              <span class="text-base">📉</span>
+              <div>
+                <div class="font-bold text-xs">R Language</div>
+                <div class="font-mono text-[10px] text-stone-500 group-hover:text-purple-100 dark:text-slate-400">Statistical Analysis, ggplot2</div>
+              </div>
+            </div>
+            <div class="group bg-cyan-50 dark:bg-slate-700/60 hover:bg-cyan-400 hover:text-charcoal border-2 border-charcoal dark:border-slate-600 hover:border-charcoal p-2 rounded-xl transition-all duration-200 cursor-default flex items-center gap-2 shadow-brutal-sm hover:-translate-y-1">
+              <span class="text-base">🧹</span>
+              <div>
+                <div class="font-bold text-xs">Data Cleansing</div>
+                <div class="font-mono text-[10px] text-stone-500 group-hover:text-stone-800 dark:text-slate-400">Missing Data Imputation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Web Systems & Workflow Automation -->
+        <div class="bg-white dark:bg-slate-800 rounded-2xl border-2 border-charcoal dark:border-slate-700 p-6 shadow-brutal dark:shadow-brutal-dark space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-stone-200 dark:border-slate-700">
+            <h3 class="font-extrabold text-charcoal dark:text-white flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-coralPink"></span>
+              Systems & Automation
+            </h3>
+            <span class="font-mono text-[11px] text-stone-400 dark:text-slate-400">03 / WORKFLOW</span>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5">
+            <div class="group bg-pink-50 dark:bg-slate-700/60 hover:bg-coralPink hover:text-white border-2 border-charcoal dark:border-slate-600 hover:border-charcoal p-2 rounded-xl transition-all duration-200 cursor-default flex items-center gap-2 shadow-brutal-sm hover:-translate-y-1">
+              <span class="text-base">🔄</span>
+              <div>
+                <div class="font-bold text-xs">n8n Automation</div>
+                <div class="font-mono text-[10px] text-stone-500 group-hover:text-pink-100 dark:text-slate-400">Webhook Pipelines, APIs</div>
+              </div>
+            </div>
+            <div class="group bg-red-50 dark:bg-slate-700/60 hover:bg-red-500 hover:text-white border-2 border-charcoal dark:border-slate-600 hover:border-charcoal p-2 rounded-xl transition-all duration-200 cursor-default flex items-center gap-2 shadow-brutal-sm hover:-translate-y-1">
+              <span class="text-base">🌐</span>
+              <div>
+                <div class="font-bold text-xs">Laravel & PHP</div>
+                <div class="font-mono text-[10px] text-stone-500 group-hover:text-red-100 dark:text-slate-400">CRUD Web Applications</div>
+              </div>
+            </div>
+            <div class="group bg-indigo-50 dark:bg-slate-700/60 hover:bg-indigo-500 hover:text-white border-2 border-charcoal dark:border-slate-600 hover:border-charcoal p-2 rounded-xl transition-all duration-200 cursor-default flex items-center gap-2 shadow-brutal-sm hover:-translate-y-1">
+              <span class="text-base">🎨</span>
+              <div>
+                <div class="font-bold text-xs">Figma & Wireframing</div>
+                <div class="font-mono text-[10px] text-stone-500 group-hover:text-indigo-100 dark:text-slate-400">Dashboard UI/UX Prototyping</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 4. FEATURED PORTFOLIO SHOWCASE -->
+    <section id="projects" class="space-y-6">
+      
+      <!-- Section Header -->
+      <div class="flex items-end justify-between border-b-2 border-charcoal dark:border-slate-700 pb-3">
+        <div>
+          <div class="inline-block bg-royalBlue text-white font-mono text-xs font-bold px-2 py-0.5 rounded mb-1">
+            03 // PROJECT SPOTLIGHT
+          </div>
+          <h2 class="text-3xl font-extrabold tracking-tight text-charcoal dark:text-white flex items-center gap-3" data-i18n="sec3-title">
+            Featured Data Visualizations & Analytics
+          </h2>
+        </div>
+        <span class="font-doodle text-xl text-royalBlue dark:text-cyan-400 hidden sm:inline-block rotate-[-2deg]" data-i18n="sec3-doodle">
+          national competition podium 🏆
+        </span>
+      </div>
+
+      <!-- MAIN SPOTLIGHT CARD (INSPIRE Bigbang 3rd Winner) -->
+      <div class="bg-white dark:bg-slate-900 rounded-3xl border-2 border-charcoal dark:border-cyan-400 shadow-brutal-lg dark:shadow-brutal-dark-lg overflow-hidden">
+        
+        <!-- Bento Card Header / Ribbon -->
+        <div class="bg-charcoal text-white px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-b-2 border-charcoal">
+          <div class="flex items-center gap-3">
+            <span class="px-2.5 py-1 bg-electricYellow text-charcoal font-black text-xs uppercase tracking-wider rounded border border-charcoal animate-pulse" data-i18n="sec3-proj1-badge">
+              ★ 3RD PLACE
+            </span>
+            <h3 class="font-mono font-bold text-sm sm:text-base text-stone-100">
+              INSPIRE Bigbang Data Viz Competition
+            </h3>
+          </div>
+          <div class="font-mono text-xs text-stone-400 flex items-center gap-2">
+            <span>TOOL: TABLEAU PUBLIC</span>
+            <span>•</span>
+            <span>YEAR: 2026</span>
+          </div>
+        </div>
+
+        <!-- Spotlight Content Body -->
+        <div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left: Narrative & Analysis Specs (5 cols) -->
+          <div class="lg:col-span-5 space-y-5">
+            <div>
+              <span class="font-mono text-xs font-bold text-royalBlue dark:text-cyan-400 uppercase tracking-widest" data-i18n="sec3-proj1-sub">
+                Comprehensive Dashboard Case Study
+              </span>
+              <h4 class="text-2xl sm:text-3xl font-black text-charcoal dark:text-white mt-1 leading-tight" data-i18n="sec3-proj1-title">
+                IKDS Dashboard: School Digitalization Readiness Analysis using AHP Method & BPS Data
+              </h4>
+            </div>
+
+            <p class="text-stone-700 dark:text-slate-300 text-sm leading-relaxed" data-i18n="sec3-proj1-desc">
+              Processed raw government dataset from BPS through Python (Pandas) and Excel. Implemented the AHP (Analytic Hierarchy Process) method for criteria weighting to evaluate school digitalization readiness across Indonesia, culminating in an interactive, high-impact final visualization using Tableau Public.
+            </p>
+
+            <!-- Key Insight Callouts -->
+            <div class="space-y-2 bg-stone-50 dark:bg-slate-800/80 p-4 rounded-xl border border-charcoal/20 dark:border-slate-700 font-mono text-xs">
+              <div class="font-bold text-charcoal dark:text-cyan-300 flex items-center gap-1.5 pb-1 border-b border-stone-200 dark:border-slate-700" data-i18n="sec3-proj1-metrics">
+                <span>🔍</span> KEY METRICS DELIVERED:
+              </div>
+              <ul class="space-y-1.5 text-stone-600 dark:text-slate-300 pt-1">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span>
+                  <span data-i18n="sec3-proj1-m1"><strong>Geospatial Heatmaps</strong> highlighting school digitalization readiness gaps.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span>
+                  <span data-i18n="sec3-proj1-m2"><strong>Intervention Quadrant Matrix</strong> for strategic resource allocation priority.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-500 font-bold">✓</span>
+                  <span data-i18n="sec3-proj1-m3"><strong>AHP Based Readiness Categories</strong> ranking provinces systematically.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Technology Badges -->
+            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+              <span class="bg-stone-100 dark:bg-slate-800 px-2.5 py-1 rounded-md border border-stone-300 dark:border-slate-700 text-stone-800 dark:text-slate-200">Tableau Public</span>
+              <span class="bg-stone-100 dark:bg-slate-800 px-2.5 py-1 rounded-md border border-stone-300 dark:border-slate-700 text-stone-800 dark:text-slate-200">Python (Pandas)</span>
+              <span class="bg-stone-100 dark:bg-slate-800 px-2.5 py-1 rounded-md border border-stone-300 dark:border-slate-700 text-stone-800 dark:text-slate-200">Excel</span>
+              <span class="bg-stone-100 dark:bg-slate-800 px-2.5 py-1 rounded-md border border-stone-300 dark:border-slate-700 text-stone-800 dark:text-slate-200">AHP Method</span>
+              <span class="bg-stone-100 dark:bg-slate-800 px-2.5 py-1 rounded-md border border-stone-300 dark:border-slate-700 text-stone-800 dark:text-slate-200">BPS Open Data</span>
+            </div>
+
+            <!-- Action Link Buttons -->
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="https://public.tableau.com/views/Dashboard_Inspire_BreakingBald_STMIKIKMICIREBON/DashboardIKDS3?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener noreferrer" class="btn-tactile bg-royalBlue text-white font-bold text-xs md:text-sm px-4 py-2.5 rounded-xl border-2 border-charcoal shadow-brutal-sm flex items-center gap-2">
+                <span data-i18n="sec3-proj1-btn1">View Tableau Live</span>
+                <span>↗</span>
+              </a>
+              <button onclick="openNotesModal()" class="btn-tactile bg-stone-100 dark:bg-slate-800 text-charcoal dark:text-slate-200 font-bold text-xs md:text-sm px-4 py-2.5 rounded-xl border-2 border-charcoal dark:border-slate-600 shadow-brutal-sm" data-i18n="sec3-proj1-btn2">
+                Read Brief Notes
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Right: High-Fidelity Tableau Mockup Container (7 cols) -->
+          <div class="lg:col-span-7">
+            <div class="relative group">
+              <!-- Tape strip at top-right corner -->
+              <div class="absolute -top-3 right-6 w-24 h-5 tape-strip rotate-[3deg] z-20"></div>
+
+              <div class="bg-charcoal p-2 rounded-2xl border-2 border-charcoal dark:border-cyan-400 shadow-brutal overflow-hidden">
+                <!-- Browser-like header bar -->
+                <div class="bg-slate-800 px-3 py-1.5 rounded-t-xl flex items-center justify-between border-b border-slate-700 mb-1 font-mono text-[10px] text-slate-400">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-500 inline-block"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-green-500 inline-block"></span>
+                    <span class="ml-2 text-slate-300 font-semibold">tableau_public://aimar-trophy/ikds-dashboard</span>
+                  </div>
+                  <span class="text-cyan-400 font-bold">1080p Interactive Viz</span>
+                </div>
+
+                <!-- Dashboard Preview Image -->
+                <div class="overflow-hidden rounded-lg aspect-video relative">
+                  <img src="assets/IKDS View.png" alt="Tableau Public Interactive Dashboard Showcase" class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-300" />
+                </div>
+              </div>
+
+              <!-- Caption Tag -->
+              <div class="mt-2 flex items-center justify-between text-xs font-mono text-stone-500 dark:text-slate-400 px-1">
+                <span data-i18n="sec3-proj1-caption">FIG 1.1 — DIGITALIZATION READINESS DASHBOARD & AHP ANALYSIS</span>
+                <span class="text-emerald-600 dark:text-cyan-400 font-bold">INSPIRE 2026 VIZ AWARD</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Upcoming / Pipeline Modular Project Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+        
+        <!-- Upcoming Project 1 -->
+        <div class="bg-white dark:bg-slate-800 rounded-2xl border-2 border-dashed border-charcoal/50 dark:border-slate-600 p-6 relative group hover:border-solid hover:border-charcoal transition-all">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-mono text-xs font-bold text-coralPink bg-coralPink/10 px-2 py-0.5 rounded border border-coralPink/30" data-i18n="sec3-up1-tag1">
+              PYTHON & MACHINE LEARNING
+            </span>
+            <span class="font-mono text-xs text-stone-400 dark:text-slate-400" data-i18n="sec3-up1-tag2">PIPELINE / IN PROGRESS</span>
+          </div>
+          <h4 class="text-xl font-bold text-charcoal dark:text-white mb-2" data-i18n="sec3-up1-title">Customer Churn Predictive Pipeline</h4>
+          <p class="text-xs text-stone-600 dark:text-slate-300 leading-relaxed mb-4" data-i18n="sec3-up1-desc">
+            Predictive modeling using Scikit-Learn and Random Forest classifiers on telecommunication subscriber data to predict churn probabilities and retention factors.
+          </p>
+          <div class="flex items-center justify-between text-xs font-mono border-t border-stone-200 dark:border-slate-700 pt-3">
+            <span class="text-stone-500 dark:text-slate-400">Tech: Python, Pandas, Scikit-Learn, Streamlit</span>
+            <span class="font-bold text-stone-700 dark:text-slate-200">v0.8 🚀</span>
+          </div>
+        </div>
+
+        <!-- Upcoming Project 2 -->
+        <div class="bg-white dark:bg-slate-800 rounded-2xl border-2 border-dashed border-charcoal/50 dark:border-slate-600 p-6 relative group hover:border-solid hover:border-charcoal transition-all">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-mono text-xs font-bold text-royalBlue bg-royalBlue/10 dark:text-cyan-300 dark:bg-cyan-950 px-2 py-0.5 rounded border border-royalBlue/30" data-i18n="sec3-up2-tag1">
+              AUTOMATION & WEB
+            </span>
+            <span class="font-mono text-xs text-stone-400 dark:text-slate-400" data-i18n="sec3-up2-tag2">PIPELINE / IN PROGRESS</span>
+          </div>
+          <h4 class="text-xl font-bold text-charcoal dark:text-white mb-2" data-i18n="sec3-up2-title">n8n Automated Data Scraping & Notification</h4>
+          <p class="text-xs text-stone-600 dark:text-slate-300 leading-relaxed mb-4" data-i18n="sec3-up2-desc">
+            Self-hosted n8n workflow monitoring daily commodity price indices across regional markets, automatically pushing structured alerts and summary graphs to Telegram/Discord.
+          </p>
+          <div class="flex items-center justify-between text-xs font-mono border-t border-stone-200 dark:border-slate-700 pt-3">
+            <span class="text-stone-500 dark:text-slate-400">Tech: n8n, Webhooks, PostgreSQL, REST APIs</span>
+            <span class="font-bold text-stone-700 dark:text-slate-200">v1.0 ⚡</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 5. INTERACTIVE CONTACT & NOTEBOOK FOOTER -->
+    <section id="contact" class="space-y-6 pt-4">
+      
+      <!-- Section Header -->
+      <div class="flex items-end justify-between border-b-2 border-charcoal dark:border-slate-700 pb-3">
+        <div>
+          <div class="inline-block bg-charcoal dark:bg-cyan-400 text-white dark:text-charcoal font-mono text-xs font-bold px-2 py-0.5 rounded mb-1">
+            04 // INQUIRIES & COLLABORATION
+          </div>
+          <h2 class="text-3xl font-extrabold tracking-tight text-charcoal dark:text-white" data-i18n="sec4-title">
+            Let's Talk Data & Opportunities
+          </h2>
+        </div>
+        <span class="font-doodle text-xl text-coralPink font-bold hidden sm:inline-block rotate-[-2deg]" data-i18n="sec4-doodle">
+          quick response guaranteed! 📬
+        </span>
+      </div>
+
+      <!-- Contact Container Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Tactile Form Container (7 cols) -->
+        <div class="lg:col-span-7 bg-white dark:bg-slate-800 rounded-3xl border-2 border-charcoal dark:border-slate-700 p-6 md:p-8 shadow-brutal dark:shadow-brutal-dark relative">
+          
+          <!-- Sticky Note Header -->
+          <div class="flex items-center justify-between pb-4 mb-6 border-b-2 border-dashed border-stone-200 dark:border-slate-700">
+            <div>
+              <h3 class="font-extrabold text-xl text-charcoal dark:text-white" data-i18n="form-title">Direct Message Slip</h3>
+              <p class="font-mono text-xs text-stone-500 dark:text-slate-400" data-i18n="form-sub">Fill in the fields below or ping directly via WhatsApp / Email.</p>
+            </div>
+            <span class="text-2xl">📝</span>
+          </div>
+
+          <form id="contactForm" onsubmit="event.preventDefault(); handleFormSubmit();" class="space-y-4">
+            
+            <!-- Input 1: Recruiter / Manager Name -->
+            <div class="space-y-1">
+              <label for="contactName" class="block font-mono text-xs font-bold text-charcoal dark:text-slate-200 uppercase">
+                <span data-i18n="form-name">Your Name & Company *</span>
+              </label>
+              <input type="text" id="contactName" required placeholder="e.g. Sarah Jenkins (Tech Talent Lead)" class="w-full bg-stone-50 dark:bg-slate-900 border-2 border-charcoal dark:border-slate-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-royalBlue font-sans text-charcoal dark:text-white">
+            </div>
+
+            <!-- Input 2: Contact Email or WhatsApp -->
+            <div class="space-y-1">
+              <label for="contactEmail" class="block font-mono text-xs font-bold text-charcoal dark:text-slate-200 uppercase">
+                <span data-i18n="form-email">Email Address or Phone *</span>
+              </label>
+              <input type="text" id="contactEmail" required placeholder="e.g. recruiter@company.com / +62 812..." class="w-full bg-stone-50 dark:bg-slate-900 border-2 border-charcoal dark:border-slate-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-royalBlue font-sans text-charcoal dark:text-white">
+            </div>
+
+            <!-- Input 3: Message / Inquiry -->
+            <div class="space-y-1">
+              <label for="contactMessage" class="block font-mono text-xs font-bold text-charcoal dark:text-slate-200 uppercase">
+                <span data-i18n="form-msg">Project Scope / Job Role Opportunity *</span>
+              </label>
+              <textarea id="contactMessage" rows="4" required placeholder="..." class="w-full bg-stone-50 dark:bg-slate-900 border-2 border-charcoal dark:border-slate-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-royalBlue font-sans text-charcoal dark:text-white resize-none"></textarea>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <button type="submit" class="btn-tactile bg-royalBlue text-white font-bold text-sm px-4 py-3 rounded-xl border-2 border-charcoal shadow-brutal flex items-center justify-center gap-2">
+                <span data-i18n="form-btn1">Send via Email Dispatch</span>
+                <span>📧</span>
+              </button>
+
+              <button type="button" onclick="sendViaWhatsApp();" class="btn-tactile bg-dataTeal text-emerald-950 font-bold text-sm px-4 py-3 rounded-xl border-2 border-charcoal shadow-brutal flex items-center justify-center gap-2">
+                <span data-i18n="form-btn2">Send via WhatsApp Direct</span>
+                <span>💬</span>
+              </button>
+            </div>
+
+            <div id="submitNotice" class="hidden mt-3 p-3 bg-emerald-100 dark:bg-emerald-900/60 border border-emerald-400 rounded-xl text-xs font-mono text-emerald-800 dark:text-emerald-200 text-center font-bold">
+              <span data-i18n="form-success">✓ Message prepared! Opening your mail client / WhatsApp chat...</span>
+            </div>
+
+          </form>
+
+        </div>
+
+        <!-- Right: Fast Info Badges & Verified Direct Links (5 cols) -->
+        <div class="lg:col-span-5 space-y-5">
+          
+          <!-- Direct Coordinates Card -->
+          <div class="bg-white dark:bg-slate-800 rounded-2xl border-2 border-charcoal dark:border-slate-700 p-6 shadow-brutal dark:shadow-brutal-dark space-y-4">
+            <h4 class="font-extrabold text-base text-charcoal dark:text-white flex items-center gap-2">
+              <span>📍</span> <span data-i18n="contact-channels">Verified Contact Channels</span>
+            </h4>
+
+            <div class="space-y-3 font-mono text-xs">
+              <!-- WhatsApp -->
+              <a href="https://wa.me/6283856246055" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3 rounded-xl bg-stone-50 dark:bg-slate-700/60 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 border border-stone-300 dark:border-slate-600 transition group">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-base">📱</span>
+                  <div>
+                    <div class="font-bold text-charcoal dark:text-white">WhatsApp Direct</div>
+                    <div class="text-stone-500 dark:text-slate-400">+62 838 5624 6055</div>
+                  </div>
+                </div>
+                <span class="text-emerald-600 font-bold group-hover:translate-x-1 transition-transform" data-i18n="contact-chat">Chat ↗</span>
+              </a>
+
+              <!-- Email -->
+              <a href="mailto:aimartrophyyy@gmail.com" class="flex items-center justify-between p-3 rounded-xl bg-stone-50 dark:bg-slate-700/60 hover:bg-blue-50 dark:hover:bg-blue-950/40 border border-stone-300 dark:border-slate-600 transition group">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-base">✉️</span>
+                  <div>
+                    <div class="font-bold text-charcoal dark:text-white" data-i18n="contact-email">Email Address</div>
+                    <div class="text-stone-500 dark:text-slate-400">aimartrophyyy@gmail.com</div>
+                  </div>
+                </div>
+                <span class="text-royalBlue font-bold group-hover:translate-x-1 transition-transform" data-i18n="contact-mail">Mail ↗</span>
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/aimar-trophy-a37004271" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3 rounded-xl bg-stone-50 dark:bg-slate-700/60 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-stone-300 dark:border-slate-600 transition group">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-base">💼</span>
+                  <div>
+                    <div class="font-bold text-charcoal dark:text-white">LinkedIn Profile</div>
+                    <div class="text-stone-500 dark:text-slate-400">in/aimar-trophy-a37004271</div>
+                  </div>
+                </div>
+                <span class="text-indigo-600 font-bold group-hover:translate-x-1 transition-transform" data-i18n="contact-connect">Connect ↗</span>
+              </a>
+
+              <!-- Location -->
+              <div class="flex items-center justify-between p-3 rounded-xl bg-stone-50 dark:bg-slate-700/60 border border-stone-300 dark:border-slate-600">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-base">📌</span>
+                  <div>
+                    <div class="font-bold text-charcoal dark:text-white" data-i18n="contact-loc">Current Location</div>
+                    <div class="text-stone-500 dark:text-slate-400" data-i18n="contact-loc-desc">Cirebon & Remote (Open to Relocation)</div>
+                  </div>
+                </div>
+                <span class="text-stone-400">WIB</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Recruiter Guarantee Note -->
+          <div class="relative bg-electricYellow text-charcoal p-5 rounded-2xl border-2 border-charcoal shadow-brutal-sm rotate-[1deg]">
+            <div class="absolute -top-3 left-6 w-20 h-4 tape-strip rotate-[-4deg]"></div>
+            <h5 class="font-extrabold text-sm mb-1" data-i18n="contact-note-title">Jaminan Perekrut:</h5>
+            <p class="font-sans text-xs leading-relaxed font-medium" data-i18n="contact-note-desc">
+              "Bagi saya, data bukan sekadar angka di layar, melainkan teka-teki operasional yang harus dipecahkan dan dicarikan solusinya—seperti bagaimana saya merancang visualisasi pemenang kompetisi nasional untuk memetakan kesiapan digital. Berbekal jam terbang nyata di lingkungan korporat dan industri berat sejak sebelum kuliah, saya membawa etos kerja, disiplin kehadiran, dan kematangan mental selayaknya profesional berpengalaman, siap memberi dampak sejak hari pertama."
+            </p>
+            <div class="mt-2 text-right font-doodle text-base font-bold">
+              — Aimar Trophy Sudrajat
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- BOTTOM FOOTER -->
+  <footer class="border-t-2 border-charcoal dark:border-slate-800 bg-white dark:bg-slate-950 py-8 px-4 md:px-8 text-center font-mono text-xs text-stone-500 dark:text-slate-400">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-charcoal dark:text-white">Aimar Trophy Sudrajat</span>
+        <span>•</span>
+        <span>STMIK IKMI Cirebon</span>
+      </div>
+      <div>
+        Designed with Tailwind CSS &amp; Neo-Brutalist System
+      </div>
+      <div>
+        © 2024–2026 • All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT FOR INTERACTIVE LOGIC -->
+  <script>
+    // THEME SWITCHER
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      htmlElement.classList.add('dark');
+    } else {
+      htmlElement.classList.remove('dark');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      if (htmlElement.classList.contains('dark')) {
+        htmlElement.classList.remove('dark');
+        localStorage.theme = 'light';
+      } else {
+        htmlElement.classList.add('dark');
+        localStorage.theme = 'dark';
+      }
+    });
+
+    // TRANSLATION SYSTEM
+    const translations = {
+      en: {
+        'nav-about': '/about', 'nav-exp': '/experience', 'nav-skills': '/skills', 'nav-projects': '/projects ★', 'nav-contact': '/contact',
+        'contact-btn': 'Contact Me',
+        'hero-tag': 'OPEN TO DATA OPERATIONS & BI ROLES',
+        'hero-tag-sub': '(ready for fulltime / contract) ✍️',
+        'hero-myname': 'my name is',
+        'hero-badge1': 'Data Analyst', 'hero-badge2': 'Information Systems Student',
+        'hero-bio': 'I turn complex, messy datasets into <strong>actionable business intelligence</strong> and clear visual stories. Grounded in high-accuracy corporate operational experience, I build robust Tableau dashboards and automated ETL pipelines.',
+        'hero-btn1': '★ Explore Featured Projects', 'hero-btn2': 'Get in Touch',
+        'stat1-title': 'National Data Viz', 'stat2-title': 'Cash Recon Audit', 'stat3-title': 'Semester Scholar',
+        'polaroid-note1': '3rd Winner National<br>Data Viz 🏆', 'polaroid-note2': 'Office-Ready<br>Work Ethic! 💼', 'polaroid-tag': '"ready to build!"',
+        'sec1-tag': '01 // BACKGROUND & TIMELINE',
+        'sec1-title': 'Academic Rigor & Real Corporate Roots',
+        'sec1-doodle': 'disciplined & high accuracy! 📈',
+        'sec1-ed-title': 'Formal Education',
+        'sec1-ed-sub': 'Undergraduate, Information Systems (S1)',
+        'sec1-ed-status': 'Current Status: 5th Semester • GPA 3.4',
+        'sec1-ed-desc': 'Focusing on business intelligence pipelines, relational databases, data warehousing, and applied machine learning. Combines academic coursework with the National Data Visualization Competition (INSPIRE BIGBANG) by Universitas Bunda Mulia and independent case studies.',
+        'sec1-ed-quote': '"Bridging technical systems logic with clear business decisions."',
+        'sec1-exp-title': 'Professional Experience',
+        'sec1-exp-badge': '2+ YRS EXP',
+        'sec1-exp-sub': 'Corporate & Operational Roles (Pre-College Foundation)',
+        'sec1-exp-desc': 'Prior to college, I spent several years working in fast-paced corporate and financial logistics settings. This built my high stamina, zero-error tolerance, and real understanding of data integrity.',
+        'sec1-job1-role': 'Cash Processing Center Cashier',
+        'sec1-job1': 'Handled high-volume financial physical reconciliations and multi-billion rupiah vault balance auditing daily. Maintained a <strong>99.98%+ accuracy record</strong> under strict compliance and time-sensitive SLAs.',
+        'sec1-job2-role': 'Hardware Production Intern',
+        'sec1-job2': 'Interned on the hardware production line (laptops), responsible for BIOS setup and rotated across various assembly line stations to comprehensively understand the entire production cycle.',
+        'sec1-job3-role': 'Refinery Operator',
+        'sec1-job3': 'Served as a Refinery Operator during the plant\'s early construction phase. Acted as a helper involved in the initial setup, gaining deep foundational knowledge of source pipelines, pressure systems, and valve placements across the oil refinery.',
+        'sec1-exp-quote': '"Recruiters love that I don\'t just know code — I already know how corporate systems and teams actually run!"',
+        'sec2-title': 'Data Stack & Technical Matrix',
+        'sec3-title': 'Featured Data Visualizations & Analytics',
+        'sec3-doodle': 'national competition podium 🏆',
+        'sec3-proj1-badge': '★ 3RD PLACE', 
+        'sec3-proj1-sub': 'Comprehensive Dashboard Case Study',
+        'sec3-proj1-title': 'IKDS Dashboard: School Digitalization Readiness Analysis using AHP Method & BPS Data',
+        'sec3-proj1-desc': 'Processed raw government dataset from BPS through Python (Pandas) and Excel. Implemented the AHP (Analytic Hierarchy Process) method for criteria weighting to evaluate school digitalization readiness across Indonesia, culminating in an interactive, high-impact final visualization using Tableau Public.',
+        'sec3-proj1-metrics': '<span>🔍</span> KEY METRICS DELIVERED:',
+        'sec3-proj1-m1': '<strong>Geospatial Heatmaps</strong> highlighting school digitalization readiness gaps.',
+        'sec3-proj1-m2': '<strong>Intervention Quadrant Matrix</strong> for strategic resource allocation priority.',
+        'sec3-proj1-m3': '<strong>AHP Based Readiness Categories</strong> ranking provinces systematically.',
+        'sec3-proj1-btn1': 'View Tableau Live', 'sec3-proj1-btn2': 'Read Brief Notes',
+        'sec3-proj1-caption': 'FIG 1.1 — DIGITALIZATION READINESS DASHBOARD & AHP ANALYSIS',
+        'sec3-up1-tag1': 'PYTHON & MACHINE LEARNING', 'sec3-up1-tag2': 'PIPELINE / IN PROGRESS',
+        'sec3-up1-title': 'Customer Churn Predictive Pipeline',
+        'sec3-up1-desc': 'Predictive modeling using Scikit-Learn and Random Forest classifiers on telecommunication subscriber data to predict churn probabilities and retention factors.',
+        'sec3-up2-tag1': 'AUTOMATION & WEB', 'sec3-up2-tag2': 'PIPELINE / IN PROGRESS',
+        'sec3-up2-title': 'n8n Automated Data Scraping & Notification',
+        'sec3-up2-desc': 'Self-hosted n8n workflow monitoring daily commodity price indices across regional markets, automatically pushing structured alerts and summary graphs to Telegram/Discord.',
+        'sec4-title': 'Let\'s Talk Data & Opportunities',
+        'sec4-doodle': 'quick response guaranteed! 📬',
+        'form-title': 'Direct Message Slip',
+        'form-sub': 'Fill in the fields below or ping directly via WhatsApp / Email.',
+        'form-name': 'Your Name & Company *', 'form-email': 'Email Address or Phone *', 'form-msg': 'Project Scope / Job Role Opportunity *',
+        'form-btn1': 'Send via Email Dispatch', 'form-btn2': 'Send via WhatsApp Direct', 'form-success': '✓ Message prepared! Opening your mail client / WhatsApp chat...',
+        'contact-channels': 'Verified Contact Channels',
+        'contact-chat': 'Chat ↗', 'contact-email': 'Email Address', 'contact-mail': 'Mail ↗', 'contact-connect': 'Connect ↗',
+        'contact-loc': 'Current Location', 'contact-loc-desc': 'Cirebon & Remote (Open to Relocation)',
+        'contact-note-title': 'Recruiter Guarantee:',
+        'contact-note-desc': '"For me, data is not just numbers on a screen, but operational puzzles that must be cracked and solved—like how I designed a national award-winning visualization to map digital readiness. Armed with real flight hours in corporate and heavy industry environments before college, I bring the work ethic, attendance discipline, and mental maturity of an experienced professional, ready to make an impact from day one."',
+        'logo-sub': 'data operations & bi',
+        'modal-case-study-desc': '"Case Study: Full analytical documentation (including AHP calculation matrix, dataset cleaning workflow, and Python scripts) is available upon request during HR/recruiter interview!"',
+        'modal-btn-understand': 'Got It'
+      },
+      id: {
+        'nav-about': '/tentang', 'nav-exp': '/pengalaman', 'nav-skills': '/keahlian', 'nav-projects': '/proyek ★', 'nav-contact': '/kontak',
+        'contact-btn': 'Hubungi Saya',
+        'hero-tag': 'TERBUKA UNTUK PERAN OPERASI DATA & BI',
+        'hero-tag-sub': '(siap untuk purna waktu / kontrak) ✍️',
+        'hero-myname': 'nama saya',
+        'hero-badge1': 'Analis Data', 'hero-badge2': 'Mahasiswa Sistem Informasi',
+        'hero-bio': 'Saya mengubah kumpulan data yang rumit dan berantakan menjadi <strong>kecerdasan bisnis yang dapat ditindaklanjuti</strong> dan cerita visual yang jelas. Berbekal pengalaman operasional korporat dengan akurasi tinggi, saya membangun dasbor Tableau dan alur otomatisasi ETL yang tangguh.',
+        'hero-btn1': '★ Jelajahi Proyek', 'hero-btn2': 'Hubungi Saya',
+        'stat1-title': 'Juara Data Viz', 'stat2-title': 'Audit Rekonsiliasi', 'stat3-title': 'Beasiswa Semester',
+        'polaroid-note1': 'Juara 3 Data Viz<br>Nasional 🏆', 'polaroid-note2': 'Etos Kerja<br>Siap Kantoran! 💼', 'polaroid-tag': '"siap membangun!"',
+        'sec1-tag': '01 // LATAR BELAKANG & LINIMASA',
+        'sec1-title': 'Ketelitian Akademis & Akar Korporat Nyata',
+        'sec1-doodle': 'disiplin & akurasi tinggi! 📈',
+        'sec1-ed-title': 'Pendidikan Formal',
+        'sec1-ed-sub': 'Sarjana (S1), Sistem Informasi',
+        'sec1-ed-status': 'Status Saat Ini: Semester 5 • IPK 3.4',
+        'sec1-ed-desc': 'Berfokus pada alur kecerdasan bisnis, basis data relasional, data warehousing, dan pembelajaran mesin terapan. Menggabungkan kuliah akademis dengan Kompetisi Visualisasi Data Nasional INSPIRE BIGBANG oleh Universitas Bunda Mulia dan studi kasus independen.',
+        'sec1-ed-quote': '"Menjembatani logika sistem teknis dengan keputusan bisnis yang jelas."',
+        'sec1-exp-title': 'Pengalaman Profesional',
+        'sec1-exp-badge': 'PENGALAMAN 2+ THN',
+        'sec1-exp-sub': 'Peran Korporat & Operasional (Fondasi Pra-Kuliah)',
+        'sec1-exp-desc': 'Sebelum kuliah, saya menghabiskan beberapa tahun bekerja di lingkungan logistik finansial dan korporat yang serba cepat. Ini membangun stamina tinggi, toleransi tanpa kesalahan, dan pemahaman nyata tentang integritas data.',
+        'sec1-job1-role': 'Kasir Pusat Pemrosesan Uang Tunai',
+        'sec1-job1': 'Menangani rekonsiliasi fisik keuangan volume tinggi dan audit saldo brankas bernilai miliaran rupiah setiap hari. Mempertahankan <strong>rekor akurasi 99,98%+</strong> di bawah kepatuhan ketat dan SLA yang sensitif terhadap waktu.',
+        'sec1-job2-role': 'Pemagang Produksi Perangkat Keras',
+        'sec1-job2': 'Magang di lini produksi perangkat keras (laptop), bertanggung jawab melakukan pengaturan BIOS serta di-rolling ke berbagai bagian lini perakitan untuk memahami siklus perakitan secara menyeluruh.',
+        'sec1-job3-role': 'Operator Refinery',
+        'sec1-job3': 'Berperan sebagai Operator Refinery pada tahap awal pembangunan pabrik. Bertindak sebagai helper yang ikut serta dalam proses pembangunan awal, sehingga memahami secara mendalam tentang sumber, tekanan, dan letak valve di masing-masing area refinery minyak.',
+        'sec1-exp-quote': '"Perekrut suka karena saya tidak hanya tahu kode — saya sudah tahu bagaimana sistem dan tim korporat benar-benar berjalan!"',
+        'sec2-title': 'Tumpukan Data & Matriks Teknis',
+        'sec3-title': 'Visualisasi Data & Analitik Pilihan',
+        'sec3-doodle': 'podium kompetisi nasional 🏆',
+        'sec3-proj1-badge': '★ JUARA 3', 
+        'sec3-proj1-sub': 'Studi Kasus Dasbor Komprehensif',
+        'sec3-proj1-title': 'IKDS Dashboard: Analisis Kesiapan Digitalisasi Sekolah Menggunakan Metode AHP & BPS Data',
+        'sec3-proj1-desc': 'Memproses dataset terbuka pemerintah (BPS) melalui Python (Pandas) dan Excel. Mengimplementasikan metode AHP (Analytic Hierarchy Process) untuk pembobotan kriteria guna mengevaluasi kesiapan digitalisasi sekolah di seluruh Indonesia, menghasilkan visualisasi akhir yang interaktif dan berdampak tinggi menggunakan Tableau Public.',
+        'sec3-proj1-metrics': '<span>🔍</span> METRIK UTAMA DISAMPAIKAN:',
+        'sec3-proj1-m1': '<strong>Heatmap Geospasial</strong> menyoroti kesenjangan kesiapan digitalisasi sekolah.',
+        'sec3-proj1-m2': '<strong>Matriks Kuadran Intervensi</strong> untuk prioritas alokasi sumber daya strategis.',
+        'sec3-proj1-m3': '<strong>Kategori Kesiapan Berbasis AHP</strong> yang memeringkat provinsi secara sistematis.',
+        'sec3-proj1-btn1': 'Lihat Dasbor Langsung', 'sec3-proj1-btn2': 'Baca Catatan Singkat',
+        'sec3-proj1-caption': 'GAMBAR 1.1 — DASBOR KESIAPAN DIGITALISASI & ANALISIS AHP',
+        'sec3-up1-tag1': 'PYTHON & MACHINE LEARNING', 'sec3-up1-tag2': 'PIPELINE / SEDANG BERJALAN',
+        'sec3-up1-title': 'Pipeline Prediktif Churn Pelanggan',
+        'sec3-up1-desc': 'Pemodelan prediktif menggunakan pengklasifikasi Scikit-Learn dan Random Forest pada data pelanggan telekomunikasi untuk memprediksi probabilitas churn dan faktor retensi.',
+        'sec3-up2-tag1': 'OTOMATISASI & WEB', 'sec3-up2-tag2': 'PIPELINE / SEDANG BERJALAN',
+        'sec3-up2-title': 'n8n Scraping & Notifikasi Data Otomatis',
+        'sec3-up2-desc': 'Alur kerja n8n yang di-host sendiri yang memantau indeks harga komoditas harian di pasar regional, secara otomatis mendorong peringatan terstruktur dan grafik ringkasan ke Telegram/Discord.',
+        'sec4-title': 'Mari Diskusikan Data & Peluang',
+        'sec4-doodle': 'respon cepat dijamin! 📬',
+        'form-title': 'Formulir Pesan Langsung',
+        'form-sub': 'Isi bidang di bawah ini atau ping langsung via WhatsApp / Email.',
+        'form-name': 'Nama Anda & Perusahaan *', 'form-email': 'Alamat Email atau Telepon *', 'form-msg': 'Cakupan Proyek / Peluang Pekerjaan *',
+        'form-btn1': 'Kirim via Email', 'form-btn2': 'Kirim via WhatsApp', 'form-success': '✓ Pesan disiapkan! Membuka klien email / obrolan WhatsApp Anda...',
+        'contact-channels': 'Saluran Kontak Terverifikasi',
+        'contact-chat': 'Chat ↗', 'contact-email': 'Alamat Email', 'contact-mail': 'Mail ↗', 'contact-connect': 'Koneksi ↗',
+        'contact-loc': 'Lokasi Saat Ini', 'contact-loc-desc': 'Cirebon & Remote (Terbuka untuk Relokasi)',
+        'contact-note-title': 'Jaminan Perekrut:',
+        'contact-note-desc': '"Bagi saya, data bukan sekadar angka di layar, melainkan teka-teki operasional yang harus dipecahkan dan dicarikan solusinya—seperti bagaimana saya merancang visualisasi pemenang kompetisi nasional untuk memetakan kesiapan digital. Berbekal jam terbang nyata di lingkungan korporat dan industri berat sejak sebelum kuliah, saya membawa etos kerja, disiplin kehadiran, dan kematangan mental selayaknya profesional berpengalaman, siap memberi dampak sejak hari pertama."',
+        'logo-sub': 'operasi data & bi',
+        'modal-case-study-desc': '"Studi Kasus: Dokumentasi analitis lengkap (termasuk matriks AHP, alur pembersihan data, dan skrip Python) tersedia atas permintaan saat wawancara HR/perekrut!"',
+        'modal-btn-understand': 'Mengerti'
+      }
+    };
+
+    let currentLang = localStorage.getItem('language') || 'en';
+    const langToggleBtn = document.getElementById('langToggle');
+    const langTextSpan = document.getElementById('langText');
+
+    function applyTranslation(lang) {
+      document.documentElement.lang = lang;
+      langTextSpan.textContent = lang.toUpperCase();
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+    }
+
+    // Init translation
+    applyTranslation(currentLang);
+
+    langToggleBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'id' : 'en';
+      localStorage.setItem('language', currentLang);
+      applyTranslation(currentLang);
+      
+      // Slight bounce effect on toggle
+      langToggleBtn.classList.add('scale-110');
+      setTimeout(() => langToggleBtn.classList.remove('scale-110'), 200);
+    });
+
+    // FORM HANDLING FUNCTIONS
+    function handleFormSubmit() {
+      const name = document.getElementById('contactName').value;
+      const email = document.getElementById('contactEmail').value;
+      const message = document.getElementById('contactMessage').value;
+      
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+      const body = encodeURIComponent(`Name/Org: ${name}\nContact: ${email}\n\nMessage:\n${message}`);
+      
+      const notice = document.getElementById('submitNotice');
+      notice.classList.remove('hidden');
+
+      setTimeout(() => {
+        window.location.href = `mailto:aimartrophyyy@gmail.com?subject=${subject}&body=${body}`;
+      }, 500);
+    }
+
+    function sendViaWhatsApp() {
+      const name = document.getElementById('contactName').value || 'Recruiter / Hiring Team';
+      const email = document.getElementById('contactEmail').value || '-';
+      const message = document.getElementById('contactMessage').value || 'Hello Aimar, I reviewed your Data Analyst portfolio!';
+
+      const text = encodeURIComponent(`Hello Aimar,\nI am ${name} (${email}).\n\n${message}`);
+      window.open(`https://wa.me/6283856246055?text=${text}`, '_blank');
+    }
+
+    // CUSTOM MODAL LOGIC
+    function openNotesModal() {
+      const modal = document.getElementById('notesModal');
+      const modalContent = document.getElementById('notesModalContent');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-90');
+      modalContent.classList.add('scale-100');
+    }
+
+    function closeNotesModal() {
+      const modal = document.getElementById('notesModal');
+      const modalContent = document.getElementById('notesModalContent');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-90');
+    }
+  </script>
+
+  <!-- Custom Modal -->
+  <div id="notesModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="notesModalContent" class="bg-white dark:bg-yellow-100 text-charcoal p-6 rounded-2xl border-4 border-black shadow-brutal max-w-sm w-[90%] transform scale-90 transition-transform duration-300 relative">
+      <div class="absolute -top-3 right-6 w-20 h-4 tape-strip rotate-[3deg] z-20"></div>
+      <p class="font-sans text-sm leading-relaxed font-bold mb-6 mt-2 text-center text-gray-800" data-i18n="modal-case-study-desc">
+        "Case Study: Full analytical documentation (including AHP calculation matrix, dataset cleaning workflow, and Python scripts) is available upon request during HR/recruiter interview!"
+      </p>
+      <div class="flex justify-center">
+        <button onclick="closeNotesModal()" class="btn-tactile bg-electricYellow text-charcoal font-bold text-sm px-6 py-2.5 rounded-xl border-2 border-black shadow-brutal hover:bg-yellow-400 transition-colors" data-i18n="modal-btn-understand">
+          Got It
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
