@@ -1,0 +1,39 @@
+================================================================================
+GOOGLE STITCH - PROMPT DOCUMENTATION & WORKFLOW LOG
+================================================================================
+Nama Mahasiswa : Aimar Trophy Sudrajat
+NIM            : 43240335
+Proyek         : Portofolio Web Interaktif (Data Operations & Business Intelligence)
+
+================================================================================
+1. TAHAP PERENCANAAN & KONSEP UI/UX (FIGMA)
+================================================================================
+- Prompt/Instruksi Utama:
+  "Rancang desain wireframe dan UI system untuk web portofolio pribadi seorang 
+   Mahasiswa Sistem Informasi & Data Analyst dengan gaya tema Tactile Analyst / 
+   Midnight Telemetry (kombinasi Dark Slate, Electric Cyan, Emerald, dan Data Amber). 
+   Sistem grid menggunakan 12-kolom responsif dengan tipografi Plus Jakarta Sans 
+   dan JetBrains Mono untuk metrik data."
+   Daftar Prompt / Log Eksekusi:
+1. Generate a Mobile Viewport version for the portfolio layout.
+2. "Generate the Mobile Navigation..."
+3. "Generate the complete Dark..."
+4. "Generate the Contact Form S..."
+5. Generate a separate screen/mobile view variant.
+
+================================================================================
+2. TAHAP PENGEMBANGAN SOURCE CODE & STRUKTUR HALAMAN
+================================================================================
+- Prompt/Instruksi Utama:
+  "Buat kode sumber HTML, CSS, dan JavaScript untuk halaman portofolio interaktif. 
+   Fitur utama mencakup bar navigasi atas, bagian 'About & Background' dengan sentuhan 
+   akademik/korporat, serta bagian 'Data Stack & Technical Matrix' yang memiliki 
+   fitur interaktif seperti efek micro-tilt pada badge skill saat di-hover mouse."
+
+================================================================================
+3. TAHAP INTEGRASI VERSION CONTROL & DEPLOYMENT (GIT & VERCEL)
+================================================================================
+- Prompt/Instruksi Utama:
+  "Pandu proses inisialisasi Git lokal, penanganan konflik merge awal menggunakan 
+   --allow-unrelated-histories, push ke repository GitHub (portfolio-aimar2026), 
+   serta pengaturan konfigurasi Root Directory di Vercel untuk deployment otomatis."
