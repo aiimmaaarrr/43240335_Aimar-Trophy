@@ -1,0 +1,16 @@
+================================================================================
+TAUTAN DESAIN FIGMA (PUBLIC ACCESS)
+================================================================================
+Tautan File Figma : https://www.figma.com/design/dXCqlSRjB5Uu4SI08tBMVX/Desain-Web_Portfolio-Aimar?node-id=0-1&t=E9X69TJWy9H2fOL0-1
+Akses             : Can View (Anyone with the link can view)
+
+Tautan Prototype  : https://www.figma.com/proto/dXCqlSRjB5Uu4SI08tBMVX/Desain-Web_Portfolio-Aimar?node-id=1-2&t=pMOoCCHfDmw8LCTG-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1
+
+================================================================================
+SPESIFIKASI DESAIN SISTEM (DESIGN TOKENS & SYSTEM)
+================================================================================
+- Primary Palette   : Tactile Blue / Midnight Telemetry Theme (#05636B, #0B0E14, #131313)
+- Accent Colors     : Emerald Green (#06D2A8), Data Amber / Yellow (#FFD036)
+- Typography        : Plus Jakarta Sans (Headings), Inter (Body), JetBrains Mono (Label / Metrics)
+- Grid System       : 12-Column Responsive Layout (Clean Paper Lines & Data Grid Structure)
+- Breakpoints       : Desktop (1200px+), Tablet (768px - 1199px), Mobile (<768px)
